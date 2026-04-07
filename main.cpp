@@ -1,26 +1,24 @@
 #include <iostream>
 #include <math.h>
+#include <cstdlib>
 
 class Solution{
 private:
- int x1; //first root
- int x2; //second root
- int D; //Discriminant
+ float x1; //first root
+ float x2; //second root
+ float D; //Discriminant
 
 public:
-    void Discriminant(int a, int b, int c){
-        int roots;
+    void Discriminant(float a, float b, float c){
         D = (b*b)+(-4*a*c);
         if (D>0){
             std::cout << "two root in the discriminant" << std::endl;
-            x1 = ((-b) - sqrt(D))/(a*2);
-            x2 = ((-b) + sqrt(D))/(a*2);
-            std::cout << "First root: " << x1 << "\nSecond root: " << x2 << std::endl;
+            x1 = ((-b) + sqrt(D))/(a*2); std::cout << "first root:\n\t(" << -b << "+" << sqrt(D) << ")" << "/2*" << a << " = " << x1 << std::endl;
+            x2 = ((-b) - sqrt(D))/(a*2); std::cout << "Second root:\n\t(" << -b << "-" << sqrt(D) << ")" << "/2*" << a << " = " << x2 << std::endl;
         }
         else if(D==0){
             std::cout << "one root in the discriminant" << std::endl;
-            x1 = (-b)/(a*2);
-            std::cout << "First root: " << x1 << std::endl;
+            x1 = (-b)/(a*2); std::cout << "root:\n\t" << -b << "/2*" << a << " = " << x1 << std::endl;
         }
         else{
             std::cout << "no roots" << std::endl;
@@ -31,20 +29,22 @@ public:
 };
 
 int main(int args, char* arg[]){
-    int a, b, c;
-    std::cout << args << std::endl;
+    float a, b, c;
+    Solution sol;
     if (args < 4 || args > 4){
         std::cout << "You need to enter 3 values" << std::endl;
         return 0;
     }
     try{
-        a = int(arg[1]);
-        b = int(arg[2]);
-        c = int(arg[3]);
+        a = std::atof(arg[1]);
+        b = std::atof(arg[2]);
+        c = std::atof(arg[3]);
 
     }catch(std::exception *e){
         std::cout << e->what() << std::endl;
         return 0;
     }
+
+    sol.Discriminant(a, b, c);
 
 }
