@@ -10,7 +10,7 @@ private:
 
 public:
     void Discriminant(float a, float b, float c){
-        D = (b*b)+(-4*a*c);
+        D = (b*b)+(-4*a*c); std::cout << "Discriminant = " << b << "^2 * -4 * " << a << " * " << c << " = " << D << std::endl;
         if (D>0){
             std::cout << "two root in the discriminant" << std::endl;
             x1 = ((-b) + sqrt(D))/(a*2); std::cout << "first root:\n\t(" << -b << "+" << sqrt(D) << ")" << "/2*" << a << " = " << x1 << std::endl;
