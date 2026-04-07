@@ -33,6 +33,7 @@ int main(int args, char* arg[]){
     Solution sol;
     if (args < 4 || args > 4){
         std::cout << "You need to enter 3 values" << std::endl;
+        std::cout << "example:\n\tdiscriminant 1 -1 1" << std::endl;
         return 0;
     }
     try{
