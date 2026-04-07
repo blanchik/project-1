@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 
 class Solution{
 private:
@@ -8,7 +9,13 @@ private:
 
 public:
     void Discriminant(int a, int b, int c){
+        int roots;
         D = (b*b)+(-4*a*c);
+        if (D>0){
+            x1 = ((-b) - sqrt(D))/(a*2);
+            x2 = ((-b) + sqrt(D))/(a*2);
+            
+        }
     }
 
 };
