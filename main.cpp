@@ -31,9 +31,20 @@ public:
 };
 
 int main(int args, char* arg[]){
+    int a, b, c;
     std::cout << args << std::endl;
     if (args < 4 || args > 4){
         std::cout << "You need to enter 3 values" << std::endl;
         return 0;
     }
+    try{
+        a = int(arg[1]);
+        b = int(arg[2]);
+        c = int(arg[3]);
+
+    }catch(std::exception *e){
+        std::cout << e->what() << std::endl;
+        return 0;
+    }
+
 }
